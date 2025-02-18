@@ -9,7 +9,7 @@ maven 'myMaven'
 stages{
 stage('Cleanup Workspace'){
 steps{
-
+cleanWs()
 }
 }
 stage('Checkout from SCM'){
