@@ -1,0 +1,21 @@
+pipeline{
+agent{
+label 'master_agent'
+}
+tools{
+jdk 'Jdk11'
+maven 'myMaven'
+}
+stages{
+stage('Cleanup Workspace'){
+steps{
+
+}
+}
+stage('Checkout from SCM'){
+steps{
+git branch:'main', credentialsId:'jenkins',  
+}
+}
+}
+}
