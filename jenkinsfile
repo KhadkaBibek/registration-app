@@ -14,8 +14,20 @@ steps{
 }
 stage('Checkout from SCM'){
 steps{
-git branch:'main', credentialsId:'jenkins',  
+git branch:'main', credentialsId:'jenkins', url:'https://github.com/KhadkaBibek/registration-app.git'
 }
 }
+
+stage('Build Application'){
+steps{
+sh 'mvn clean package'
+}
+}
+stage('Test Application'){
+steps{
+sh 'mvn test'
+}
+}
+
 }
 }
